@@ -1,0 +1,82 @@
+<!-- Mobile Menu Component -->
+<!-- Add this to the header section of each page -->
+
+<!-- Mobile Menu Button (for small screens) -->
+<button class="mobile-menu-btn md:hidden bg-gray-100 dark:bg-gray-800 rounded-full p-2 hover-glow focus-ring transition-all">
+    <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5 transition-all"></div>
+    <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5 transition-all"></div>
+    <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white transition-all"></div>
+</button>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="absolute top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl transform translate-x-full transition-transform duration-300">
+        <div class="p-8">
+            <!-- Close Button -->
+            <button class="mobile-menu-close absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-brand-purple">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Logo -->
+            <div class="text-2xl font-bold tracking-wider dark:text-white mb-8">Baruna.</div>
+            
+            <!-- Navigation Links -->
+            <nav class="space-y-6">
+                <a href="index.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">Home</a>
+                <a href="projects.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">Projects</a>
+                <a href="about.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">About</a>
+            </nav>
+            
+            <!-- Social Links -->
+            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/barunapasha" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                    </a>
+                    <a href="https://github.com/barunapasha" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://wa.me/6285717623720" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.458l-6.167 1.679zm6.489-4.941c.326.192.66.37.999.529.073.036.147.074.22.112 1.579.84 3.34 1.287 5.166 1.286 5.457 0 9.898-4.442 9.9-9.899-.002-5.456-4.443-9.897-9.899-9.897-5.455 0-9.898 4.441-9.898 9.896 0 2.046.602 4.028 1.734 5.727l.217.324-1.133 4.137 4.224-1.119z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact</h3>
+                <p class="text-gray-600 dark:text-gray-400">Ready to work together?</p>
+                <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-6 rounded-lg mt-4 inline-block">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional CSS for mobile menu -->
+<style>
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu.active .transform {
+    transform: translateX(0);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+</style> 

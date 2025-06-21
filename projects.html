@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Baruna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-purple': '#6E00FF',
+            'brand-dark': '#111111',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-white text-brand-dark dark:bg-brand-dark dark:text-gray-200 overflow-x-hidden">
+
+    <!-- Header/Nav -->
+    <header class="container mx-auto px-8 py-6 flex justify-between items-center w-full z-20 left-0 right-0 animate-slide-in-top">
+        <div class="text-2xl font-bold tracking-wider dark:text-white hover-scale">Baruna.</div>
+        <nav class="hidden md:flex items-center space-x-10">
+            <a href="index.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-brand-purple dark:hover:text-brand-purple">Home</a>
+            <a href="projects.html" class="nav-link text-gray-900 dark:text-white font-bold hover:text-brand-purple dark:hover:text-brand-purple">Projects</a>
+            <a href="about.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-brand-purple dark:hover:text-brand-purple">About</a>
+        </nav>
+        <div>
+            <button id="theme-toggle" class="bg-gray-100 dark:bg-gray-800 rounded-full p-2 hover-glow focus-ring transition-all">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 14.364l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </button>
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn md:hidden bg-gray-100 dark:bg-gray-800 rounded-full p-2 hover-glow focus-ring transition-all ml-4">
+                <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5 transition-all"></div>
+                <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5 transition-all"></div>
+                <div class="hamburger-line w-6 h-0.5 bg-gray-900 dark:bg-white transition-all"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl transform translate-x-full transition-transform duration-300">
+            <div class="p-8">
+                <!-- Close Button -->
+                <button class="mobile-menu-close absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-brand-purple">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <!-- Logo -->
+                <div class="text-2xl font-bold tracking-wider dark:text-white mb-8">Baruna.</div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-6">
+                    <a href="index.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">Home</a>
+                    <a href="projects.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">Projects</a>
+                    <a href="about.html" class="block text-xl font-semibold text-gray-900 dark:text-white hover:text-brand-purple transition-colors">About</a>
+                </nav>
+                
+                <!-- Social Links -->
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/barunapasha" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07-4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                        </a>
+                        <a href="https://github.com/barunapasha" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://wa.me/6285717623720" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-brand-purple transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.458l-6.167 1.679zm6.489-4.941c.326.192.66.37.999.529.073.036.147.074.22.112 1.579.84 3.34 1.287 5.166 1.286 5.457 0 9.898-4.442 9.9-9.899-.002-5.456-4.443-9.897-9.899-9.897-5.455 0-9.898 4.441-9.898 9.896 0 2.046.602 4.028 1.734 5.727l.217.324-1.133 4.137 4.224-1.119z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Ready to work together?</p>
+                    <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-6 rounded-lg mt-4 inline-block">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-8 mt-24">
+        <!-- Hero Section -->
+        <section class="text-center animate-fade-in-up">
+            <h1 class="text-6xl md:text-8xl font-black mt-2 leading-none dark:text-white">
+                My <span class="gradient-text">Best</span> Creations
+            </h1>
+            <p class="mt-6 text-xl text-gray-500 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up stagger-1">
+                Designing and Developing Robust and Stylish Web Applications for a Decade and Counting
+            </p>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="mt-16 space-y-16">
+             <div class="bg-gray-100 dark:bg-[#1C1C1C] rounded-2xl p-8 card-hover animate-fade-in-up stagger-1">
+                <img src="nongkiyuk.png" alt="NongkiYuk!" class="rounded-xl w-full shadow-lg hover-scale transition-transform">
+                <div class="mt-8 text-center">
+                    <h3 class="text-4xl font-bold flex items-center justify-center dark:text-white">
+                        NongkiYuk!
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="ml-3 hover-scale">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-400 dark:text-gray-500 hover:text-brand-purple transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">A realtime app with notification that helped people to search any cafe, restaurant, or coffee shop with their own needed based on Jakarta Selatan.</p>
+                    <div class="mt-6 flex flex-wrap justify-center gap-2">
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">React Native</span>
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">Firebase</span>
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">Real-time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-[#1C1C1C] rounded-2xl p-8 card-hover animate-fade-in-up stagger-2">
+                <img src="uperfood.png" alt="UperFood" class="rounded-xl w-full shadow-lg hover-scale transition-transform">
+                 <div class="mt-8 text-center">
+                    <h3 class="text-4xl font-bold flex items-center justify-center dark:text-white">
+                        UperFood
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="ml-3 hover-scale">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-400 dark:text-gray-500 hover:text-brand-purple transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2 max-w-2xl mx-auto">E-commerce platform promoting canteen university products with payment integration.</p>
+                    <div class="mt-6 flex flex-wrap justify-center gap-2">
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">Laravel</span>
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">PHP</span>
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                        <span class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm font-medium">Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Project Placeholder -->
+            <div class="bg-gray-100 dark:bg-[#1C1C1C] rounded-2xl p-8 card-hover animate-fade-in-up stagger-3">
+                <div class="w-full h-64 bg-gradient-to-br from-brand-purple to-purple-600 rounded-xl flex items-center justify-center animate-pulse-slow">
+                    <div class="text-center text-white">
+                        <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <p class="text-xl font-semibold">More Projects Coming Soon!</p>
+                        <p class="text-sm opacity-80">Stay tuned for more amazing creations</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <h3 class="text-4xl font-bold dark:text-white">Future Project</h3>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2">Exciting new projects are in development. Can't wait to share them with you!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-8 mt-32 border-t border-gray-200 dark:border-gray-800 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <nav class="flex items-center space-x-8">
+                 <a href="index.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-brand-purple">Home</a>
+                 <a href="projects.html" class="nav-link text-gray-900 dark:text-white font-bold hover:text-brand-purple">Projects</a>
+                 <a href="about.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-brand-purple">About</a>
+            </nav>
+            <div class="flex items-center space-x-6 mt-6 md:mt-0 text-gray-500 dark:text-gray-400">
+                <a href="https://www.instagram.com/barunapasha" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple hover-scale">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                </a>
+                 <a href="https://github.com/barunapasha" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple hover-scale">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+                 <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple hover-scale">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://wa.me/6285717623720" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple dark:hover:text-brand-purple hover-scale">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.458l-6.167 1.679zm6.489-4.941c.326.192.66.37.999.529.073.036.147.074.22.112 1.579.84 3.34 1.287 5.166 1.286 5.457 0 9.898-4.442 9.9-9.899-.002-5.456-4.443-9.897-9.899-9.897-5.455 0-9.898 4.441-9.898 9.896 0 2.046.602 4.028 1.734 5.727l.217.324-1.133 4.137 4.224-1.119z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+             <h3 class="text-4xl font-black dark:text-white animate-fade-in-up">Interested in working together?</h3>
+             <div class="mt-8 flex justify-center items-center space-x-4">
+                <a href="https://www.linkedin.com/in/barunapasha/" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-lg">Get In Touch</a>
+                <a href="https://github.com/barunapasha" class="bg-white border border-gray-300 text-gray-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700 transition-all hover-lift">Visit My Github</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-12">   
+             <p>&copy; 2024 All Rights Reserved.</p>
+             <p>Made with 💜 by Baruna Pasha.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
