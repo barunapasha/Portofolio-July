@@ -529,4 +529,71 @@ section h2.animate-fade-in-up {
         background: #6E00FF;
         border: 2px solid #6E00FF;
     }
+}
+
+/* Splash Cursor from ReactBits */
+#splash-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.splash-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #6E00FF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    opacity: 0;
+}
+
+.splash-dot.active {
+    opacity: 1;
+}
+
+.splash-trail {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: rgba(110, 0, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.splash-trail.active {
+    opacity: 1;
+}
+
+/* Hover effects for interactive elements */
+a:hover ~ #splash-cursor .splash-dot,
+button:hover ~ #splash-cursor .splash-dot,
+.nav-link:hover ~ #splash-cursor .splash-dot,
+.btn-primary:hover ~ #splash-cursor .splash-dot,
+.card-hover:hover ~ #splash-cursor .splash-dot {
+    background: #9c66ff;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+a:hover ~ #splash-cursor .splash-trail,
+button:hover ~ #splash-cursor .splash-trail,
+.nav-link:hover ~ #splash-cursor .splash-trail,
+.btn-primary:hover ~ #splash-cursor .splash-trail,
+.card-hover:hover ~ #splash-cursor .splash-trail {
+    background: rgba(156, 102, 255, 0.4);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    #splash-cursor {
+        display: none;
+    }
 } 

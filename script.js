@@ -189,6 +189,78 @@ function initMobileMenu() {
     });
 }
 
+// Splash Cursor from ReactBits
+function initSplashCursor() {
+    const splashCursor = document.getElementById('splash-cursor');
+    const splashDot = document.querySelector('.splash-dot');
+    const splashTrail = document.querySelector('.splash-trail');
+    
+    if (!splashCursor || !splashDot || !splashTrail) return;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let dotX = 0;
+    let dotY = 0;
+    let trailX = 0;
+    let trailY = 0;
+    let isMoving = false;
+    let moveTimeout;
+    
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        if (!isMoving) {
+            isMoving = true;
+            splashDot.classList.add('active');
+            splashTrail.classList.add('active');
+        }
+        
+        // Clear timeout
+        clearTimeout(moveTimeout);
+        moveTimeout = setTimeout(() => {
+            isMoving = false;
+            splashDot.classList.remove('active');
+            splashTrail.classList.remove('active');
+        }, 100);
+    });
+    
+    // Smooth animation loop
+    function animate() {
+        // Smooth dot movement
+        dotX += (mouseX - dotX) * 0.1;
+        dotY += (mouseY - dotY) * 0.1;
+        
+        // Smooth trail movement with delay
+        trailX += (mouseX - trailX) * 0.05;
+        trailY += (mouseY - trailY) * 0.05;
+        
+        // Apply transforms
+        splashDot.style.left = dotX + 'px';
+        splashDot.style.top = dotY + 'px';
+        
+        splashTrail.style.left = trailX + 'px';
+        splashTrail.style.top = trailY + 'px';
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Hide cursor on mobile
+    function checkMobile() {
+        if (window.innerWidth <= 768) {
+            splashCursor.style.display = 'none';
+        } else {
+            splashCursor.style.display = 'block';
+        }
+    }
+    
+    // Initialize
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    animate();
+}
+
 // Initialize all functions when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
@@ -196,4 +268,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initSmoothScrolling();
     initMobileMenu();
+    initSplashCursor();
 });
